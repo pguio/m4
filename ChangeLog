@@ -1,0 +1,449 @@
+2023-02-11  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_arma.m4, ac_check_blitz.m4, ac_check_eigen.m4,
+	  ac_cxx_have_std.m4, ac_cxx_mpi.m4, ac_cxx_namespaces.m4:
+	Updated to autoconf 2.71, updated obsolete functions
+	AC_LANG_CPLUSPLUS to AC_LANG([C++]), and
+	AC_TRY_COMPILE() to AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[]],[[]])],...).
+
+2019-10-02  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_blitz.m4:
+	Fixed enble-threadsafe-blitz.
+
+2019-05-01  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ax_boost_base.m4, ax_boost_system.m4, ax_compare_version.m4,
+	  ax_mpi.m4, ax_prog_cxx_mpi.m4:
+	Updated to latest available GNU autoconf-archive available at the public Git
+	repository git://git.sv.gnu.org/autoconf-archive.git.
+
+2018-12-24  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_hdf4.m4:
+	Added library configuration for fedora 29.
+
+2017-07-05  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_plplot.m4:
+	Replaced hardcoded C library to test libplplotd by introducing argument
+	variable PLPLOT_CLIB initialised to new default library name libplplot.
+
+2017-06-07  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_arma.m4:
+	Enabled overwriting default ARMA_LIBS value -larmadillo.
+
+2016-10-05  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_prog_mex.m4:
+	Added mex extension mexa64.
+	Added returned type for test function mexFunction.
+
+2016-06-03  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_hdf4.m4:
+	Improved automatic search of default include and lib paths.
+	Encapsulated calls of AC_CHECK_LIB's to avoid laborious successive calls of
+	if test -z "$ac_cv_lib_mfhdf_SDstart" ; then AC_CHECK_LIB(...); fi
+
+2016-06-03  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_plplot.m4:
+	Fixed typo in cache-id variable reference when calling commands-to-set-it in
+	AC_CACHE_CHECK.
+
+2015-02-05  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ax_boost_system.m4:
+	Imported macro for testing Boost System library
+	(http://www.gnu.org/software/autoconf-archive/ax_boost_system.html)
+
+2015-02-05  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ax_boost_base.m4:
+	Updated to latest version available from
+	http://www.gnu.org/software/autoconf-archive/ax_boost_base.html.
+
+2012-11-07  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_hdf5.m4:
+	Added optional enabling of hdf5 high-level library.
+
+2012-11-06  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_eigen.m4:
+	Added support to the latest eigen3.
+
+2012-04-24  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ax_boost_base.m4:
+	Imported from http://ac-archive.sourceforge.net/ac-archive/ax_boost_base.m4.
+
+2012-04-24  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ax_boost.m4:
+	Imported from http://ac-archive.sourceforge.net/ac-archive/ax_boost.m4.
+
+2011-11-08  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_blitz.m4:
+	Removed the option to enable ther "old" or "new" blitz version, instead
+	detect what is available by checking first the new version, and if not
+	successful try the old version.
+
+2011-11-08  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_blitz.m4:
+	Added an option to enable and check either "old" or "new" blitz (blitz2
+	with the unified template machinery).
+
+2011-11-07  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_blitz.m4, ac_check_dxml.m4, ac_check_fftw.m4,
+	  ac_check_fftw3.m4, ac_check_hdf4.m4, ac_check_hdf5.m4,
+	  ac_check_mlib.m4, ac_check_netcdf.m4, ac_check_plplot.m4: Prepend any existing value of CPPFLAGS and LDFLAGS when setting these
+	variables to test availability of the library as it can be useful if any
+	extra header or library path are necessary (as it was the case to use HDF4
+	at CINECA SP6 requiring paths for libsz and libz).
+
+2011-11-07  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_cxx_flags_preset.m4: Do not enforce any default values for LDFLAGS and AR_FLAGS.
+
+2011-09-13  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ax_prog_cxx_mpi.m4:
+	Imported from
+	http://www.gnu.org/software/autoconf-archive/ax_prog_cxx_mpi.html.
+
+2011-09-13  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* acx_mpi.m4, ax_mpi.m4:
+	Updated to latest version from http://autoconf-archive.cryp.to/
+
+2010-03-23  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_blitz.m4, ac_check_dxml.m4, ac_check_eigen.m4,
+	  ac_check_fftw.m4, ac_check_fftw3.m4, ac_check_hdf4.m4,
+	  ac_check_hdf5.m4, ac_check_mlib.m4, ac_check_netcdf.m4,
+	  ac_check_plplot.m4:
+	Cosmetic changes.
+
+2010-03-23  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_arma.m4:
+	Added new macro for C++ linear algebra library Armadillo
+	(http://arma.sourceforge.net).
+
+2009-07-16  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_plplot.m4:
+	Fixed typo that caused wrong initialisation of variable PLPLOT_LDFLAGS.
+
+2009-06-29  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_cxx_mpi.m4:
+	Fixed report message for enabled MPI when using opton --disable-mpi.
+
+2009-04-04  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_eigen.m4:
+	Added new macro for template library for vector and matrix math eigen
+	(http://eigen.tuxfamily.org/).
+
+2009-02-17  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_blitz.m4:
+	Fixed macro definition name for thread safe use.
+
+2009-02-08  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_netcdf.m4:
+	Fixed variable name to be compliant with cached variable names (_cv_).
+
+2008-11-27  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_plplot.m4:
+	Fixed variable name to be compliant with cached variable names (_cv_).
+
+2008-10-17  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_netcdf.m4:
+	Added interface for Fortran 90.
+
+2008-07-23  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_cxx_mpi.m4:
+	Added error test if MPI is enabled but compile does not work.
+
+2008-07-22  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_cxx_have_std.m4, ac_cxx_namespaces.m4:
+	Added new macros from Blitz m4 repository.
+
+2008-06-12  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_cxx_mpi.m4:
+	Fixed bug that set the "inc" and "lib" variables with default withval="no".
+
+2008-04-20  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_blitz.m4:
+	Fixed variable name ac_cv_lib_blitz.
+
+2008-04-16  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_blitz.m4:
+	Added option to enable thread-safety features to Blitz. Note that it
+	requires thread support or OpenMP.
+
+2008-04-14  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_blitz.m4:
+	Fixed AC_CACHE_CHECK variable.
+
+2007-09-26  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_cxx_mpi.m4:
+	Added support to parse MPI include and library directories as inc_dir,lib_dir.
+	Removed unecessary AC_SUBST statements.
+
+2007-09-26  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_cxx_enable_debug.m4, ac_cxx_enable_optimize.m4,
+	  ac_cxx_enable_profile.m4, ac_cxx_flags_preset.m4:
+	Cosmetic changes.
+
+2007-09-26  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_blitz.m4, ac_check_dxml.m4, ac_check_fftw.m4,
+	  ac_check_fftw3.m4, ac_check_hdf4.m4, ac_check_mlib.m4,
+	  ac_check_plplot.m4:
+	Cosmetic changes.
+
+2007-07-22  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_plplot.m4:
+	C and C++ draft check for PLplot.
+
+2007-05-15  Patrick Guio <p.guio@ucl.ac.uk>
+
+	* ac_check_netcdf.m4:
+	Macro to test availability of C and Fortran NetCDF libraries.
+
+2006-12-15  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* acx_mpi.m4:
+	Updated to latest version from http://autoconf-archive.cryp.to/
+
+2006-08-28  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* update-cl.sh:
+	Shell script to update ChangeLog.
+
+2006-08-28  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_cxx_mpi.m4:
+	Defined HAVE_MPI value to 1.
+
+2006-08-25  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_cxx_mpi.m4:
+	Added Scali mpic++ as a mpi compiler.
+
+2006-02-03  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_cxx_flags_preset.m4:
+	Update Cray C++ compiler flag presets.
+
+2006-02-03  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_fortran_flags_preset.m4:
+	Add flag presets for Fujitsu frt compiler.  Rename Cray ftn compiler and
+	update flag presets.
+	Allow for some additional compiler name variants with PathScale and PGI
+	Fortran compilers.
+
+2006-01-13  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_cxx_flags_preset.m4:
+	Removed -D flags for defining special preprocessor symbols when using XL C++
+	compiler on Mac OS X or AIX systems or when using PathScale C++ compiler.
+	No longer needed, since we now use predefined symbols to detect these
+	compilers.
+
+2005-12-05  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_check_hdf5.m4:
+	Fixed typo.
+
+2005-12-05  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_check_blitz.m4, ac_check_dxml.m4, ac_check_fftw.m4,
+	  ac_check_fftw3.m4, ac_check_hdf4.m4, ac_check_hdf5.m4,
+	  ac_check_mlib.m4:
+	Added comment about substituted variables and macro definition.
+
+2005-12-05  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_check_hdf5.m4, ac_lib_hdf5.m4:
+	Replaced macro AC_LIB_HDF5 by AC_CHECK_HDF5.
+	Set AC_SUBST variables HDF5_CPPFLAGS, HDF5_LDFLAGS and HDF5_LIBS
+	instead of appending to variables CPPFLAGS, LDFLAGS and LIBS.
+	Added arguments [ACTION-IF-FOUND], [ACTION-IF-NOT-FOUND].
+
+2005-12-05  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_check_hdf4.m4, ac_lib_hdf4.m4:
+	Replaced macro AC_LIB_HDF4 by AC_CHECK_HDF4.
+	Set AC_SUBST variables HDF4_CPPFLAGS, HDF4_LDFLAGS and HDF4_LIBS
+	instead of appending to variables CPPFLAGS, LDFLAGS and LIBS.
+	Added arguments [ACTION-IF-FOUND], [ACTION-IF-NOT-FOUND].
+
+2005-12-05  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_check_mlib.m4, ac_lib_mlib.m4:
+	Replaced macro AC_LIB_MLIB by AC_CHECK_MLIB.
+	Set AC_SUBST variables MLIB_CPPFLAGS, MLIB_LDFLAGS and MLIB_LIBS
+	instead of appending to variables CPPFLAGS, LDFLAGS and LIBS.
+	Added arguments [ACTION-IF-FOUND], [ACTION-IF-NOT-FOUND].
+
+2005-12-05  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_check_dxml.m4, ac_lib_dxml.m4:
+	Replaced macro AC_LIB_DXML by AC_CHECK_DXML.
+	Set AC_SUBST variables DXML_CPPFLAGS, DXML_LDFLAGS and DXML_LIBS
+	instead of appending to variables CPPFLAGS, LDFLAGS and LIBS.
+	Added arguments [ACTION-IF-FOUND], [ACTION-IF-NOT-FOUND].
+
+2005-12-05  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_check_fftw3.m4, ac_lib_fftw3.m4:
+	Replaced macro AC_LIB_FFTW3 by AC_CHECK_FFTW3.
+	Set AC_SUBST variables FFTW3_CPPFLAGS, FFTW3_LDFLAGS and FFTW3_LIBS
+	instead of appending to variables CPPFLAGS, LDFLAGS and LIBS.
+	Added arguments [ACTION-IF-FOUND], [ACTION-IF-NOT-FOUND].
+
+2005-12-05  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_check_fftw.m4, ac_lib_fftw.m4:
+	Replaced macro AC_LIB_FFTW by AC_CHECK_FFTW.
+	Set AC_SUBST variables FFTW_CPPFLAGS, FFTW_LDFLAGS and FFTW_LIBS
+	instead of appending to variables CPPFLAGS, LDFLAGS and LIBS.
+	Added arguments [ACTION-IF-FOUND], [ACTION-IF-NOT-FOUND].
+
+2005-12-05  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_check_blitz.m4, ac_cxx_lib_blitz.m4:
+	Replaced macro AC_CXX_LIB_BLITZ by AC_CHECK_BLITZ.
+	Set AC_SUBST variables BLITZ_CPPFLAGS, BLITZ_LDFLAGS and BLITZ_LIBS
+	instead of appending to variables CPPFLAGS, LDFLAGS and LIBS.
+	Added arguments [ACTION-IF-FOUND], [ACTION-IF-NOT-FOUND].
+
+2005-10-20  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_cxx_lib_blitz.m4:
+	Fixed header help.
+
+2005-10-20  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_cxx_flags_preset.m4, ac_fortran_flags_preset.m4:
+	Added support for Pathscale compilers.
+	Minor fixes in flags settings.
+
+2005-10-07  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_lib_hdf4.m4, ac_lib_hdf5.m4:
+	Fixed bug in assignement of CPPFLAGS and LDFLAGS in the case syntax
+	--with-*=inc_dir,lib_dir.
+
+2005-10-07  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_lib_fftw.m4, ac_lib_fftw3.m4:
+	Fixed bug in assignement of CPPFLAGS and LDFLAGS in the case syntax
+	--with-*=inc_dir,lib_dir.
+
+2005-10-07  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_cxx_lib_blitz.m4:
+	Added macro definition HAVE_BLITZ if test successfull.
+	Fixed bug in assignement of CPPFLAGS and LDFLAGS in the
+	case syntax --with-*=inc_dir,lib_dir.
+
+2005-08-19  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* acx_mpi.m4:
+	Imported from ttp://ac-archive.sourceforge.net/
+	version 1.3 (2004/12/24)
+
+2005-07-07  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_lib_hdf5.m4:
+	Check for HDF5 include and lib paths.
+
+2005-06-28  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_cxx_lib_blitz.m4, ac_lib_fftw.m4, ac_lib_fftw3.m4,
+	  ac_lib_hdf4.m4:
+	Fixed initialisation of CPPFLAGS and LDFLAGS only when $withval not
+	empty.
+
+2005-06-28  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_cxx_lib_blitz.m4, ac_lib_fftw.m4, ac_lib_fftw3.m4,
+	  ac_lib_hdf4.m4:
+	Protected inc_dir and lib_dir variables against "yes" assignement.
+
+2005-06-28  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_lib_dxml.m4, ac_lib_fftw3.m4, ac_lib_mlib.m4:
+	Fixed quotes use when assigning withval variable.
+
+2005-06-28  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_lib_fftw.m4, ac_lib_fftw3.m4, ac_lib_hdf4.m4:
+	Added support to parse include and library directories specified with the
+	syntax --with-*=inc_dir,lib_dir.
+
+2005-06-28  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_cxx_lib_blitz.m4:
+	Fixed a typos when assigning CPPFLAGS.
+
+2005-06-28  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_cxx_lib_blitz.m4:
+	Added support to parse include and library directories as inc_dir,lib_dir.
+
+2005-05-05  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_enable_gnuplot.m4:
+	New file to enable use of gnuplot-interface c++-tool.
+
+2005-02-17  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_lib_hdf4.m4:
+	Fixed problem with dynamic library libjpeg.so on Compaq system running OSF1.
+	Added support for HDF version 4.2 on this platform.
+
+2005-02-09  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_fortran_flags_preset.m4:
+	Preset for fortran compilers.
+
+2005-02-08  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* acx_mpi.m4:
+	IMported macro to test for MPI.
+
+2005-02-08  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* update.sh:
+	Added ac_compilers_64bits.m4 in the list of macros to check.
+
+2005-02-08  Patrick Guio <patrick.guio@matnat.uio.no>
+
+	* ac_compilers_64bits.m4, ac_cxx_flags_preset.m4:
+	Generalized name of g++ compiler in case statements.
+
